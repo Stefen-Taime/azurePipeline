@@ -175,11 +175,6 @@ resource "azurerm_databricks_workspace" "example" {
   sku                 = "standard"  
 }
 
-resource "azurerm_role_assignment" "databricks_adls_access" {
-  scope                = azurerm_storage_account.data_lake.id
-  role_definition_name = "Storage Account Contributor"
-  principal_id         = "09850ce5-2256-4fd2-80ac-b2840528946c" 
-}
 
 
 
