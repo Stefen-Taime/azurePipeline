@@ -6,9 +6,9 @@ from pyspark.sql.types import IntegerType, DoubleType, BooleanType, DateType
 configs = {
     "fs.azure.account.auth.type": "OAuth",
     "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
-    "fs.azure.account.oauth2.client.id": "58f6a673-ddd5-4692-8754-2ca7ad2673e5",
-    "fs.azure.account.oauth2.client.secret": 'jw28Q~6h~NxvTEyq-WZbxRfWk4H0mVp8-soPedeJ',
-    "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/edee1f9d-271d-4d21-b015-72591963702f/oauth2/token"
+    "fs.azure.account.oauth2.client.id": "",
+    "fs.azure.account.oauth2.client.secret": '',
+    "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com//oauth2/token"
 }
 
 # Mounting the 'raw-data' container from Azure Data Lake storage to Databricks
@@ -79,13 +79,3 @@ legislative_district_distribution.show()
 
 # Writing the processed DataFrame to storage
 prepared_electric.repartition(1).write.mode("overwrite").option("header", 'true').csv("/mnt/transformedMount/transformed/electric")
-
-
-
-# COMMAND ----------
-
-
-
-# COMMAND ----------
-
-
