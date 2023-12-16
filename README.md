@@ -13,3 +13,4 @@ The following diagram illustrates the architecture of our data pipeline:
   - **Databricks**: A unified data analytics platform. Once data is copied into the `raw-data` container in the Data Lake, Databricks reads it, performs transformations, calculates metrics, and copies the transformed data into the `transformed` folder within the Data Lake in Parquet format.
   - **Key Vault**: Azure service to securely manage secrets and keys.
 - **Data Lake**: Serves as the central repository for both raw and transformed data, designed for big data analytics. The electric vehicle data, once processed, are stored efficiently for further analysis and querying.
+
