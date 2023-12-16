@@ -9,7 +9,7 @@ The following diagram illustrates the architecture of our data pipeline:
 - **External Sources**: Data is ingested from various external sources through HTTP APIs.
 - **Terraform**: Infrastructure as Code (IaC) is used to provision and manage cloud resources, such as Key Vault, Data Factory, and the Data Lake.
 - **ETL Pipeline**: The Extract, Transform, Load (ETL) processes are orchestrated using:
-  - **Data Factory**: Azure's cloud-based data integration service which is configured to copy the CSV file from the HTTP source containing electric vehicle population data.
+  - **Data Factory**: Azure's cloud-based data integration service. Data Factory is set up to copy files from HTTP sources, such as the CSV file available at `https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType=DOWNLOAD`, which contains details on the electric vehicle population such as VIN, County, City, Model Year, Make, Model, Type of Electric Vehicle, and more.
   - **Databricks**: A unified data analytics platform that processes data using PySpark. Here is an overview of the operations performed by Databricks:
     - Mounting the Azure Data Lake storage containers for `raw-data` and `transformed` data.
     - Reading the data from the mounted storage and cleaning it by dropping rows with missing values.
